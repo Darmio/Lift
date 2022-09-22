@@ -8,11 +8,11 @@ public class Floor {
     private
     List<Byte> passengersFloor;
 
-    private Floor(){
+    private Floor() {
 
     }
 
-    public Floor(byte number){
+    public Floor(byte number) {
         this.number = number;
         this.passengersFloor = new ArrayList<>();
     }
@@ -25,15 +25,9 @@ public class Floor {
         return passengersFloor;
     }
 
-    public boolean add(Byte nextFloor){
+    public boolean add(Byte nextFloor) {
         this.passengersFloor.add(nextFloor);
         return true;
     }
 
-    /*public boolean remove(Byte floor){
-        if(!this.passengersFloor.isEmpty()){
-            return passengersFloor.remove(floor);
-        }
-            return false;
-    }*/
 }
