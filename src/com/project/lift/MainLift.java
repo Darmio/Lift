@@ -1,5 +1,7 @@
 package com.project.lift;
 
+import java.util.Scanner;
+
 public class MainLift {
 
     public static void main(String... args) {
@@ -16,7 +18,21 @@ public class MainLift {
         liftRunner.setCountIterations(countIterations);
 
         liftRunner.start(pass1Floor);
-        liftRunner.run();
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                liftRunner.run();
+            }
+        });
+        t.start();
+
+        Scanner scanner = new Scanner(System.in);
+        String line;
+        while ((line = scanner.next()).isEmpty()){
+
+        }
+         System.out.println("LINE "+line);
+        liftRunner.setStop(true);
 
     }
 }

@@ -25,14 +25,18 @@ public class LiftRunner {
 
     }
 
+    public void setStop(boolean stop) {
+        this.stop = stop;
+    }
+
     public void run() {
         int i = 1;
         Lift.Direction direct = lift.getCurrentDirection();
         while (!stop && (lift.countPassenersInLift() + lift.countPassenersWait() > 0)) {
-            if (i > this.countIterations) {
+            /*if (i > this.countIterations) {
                 //      setStop(true);
                 break;
-            }
+            } */
             printStep();
             Floor curFloor = lift.getCurFloor();
             lift.goNextFloor();
@@ -45,6 +49,7 @@ public class LiftRunner {
             System.out.println(System.lineSeparator());
             i++;
         }
+        System.out.println("stop "+stop);
     }
 
     public void printStep() {
